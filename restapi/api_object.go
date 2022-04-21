@@ -22,6 +22,7 @@ type apiObjectOpts struct {
 	update_method  string
 	destroy_method string
 	delete_path    string
+	delete_data    bool
 	search_path    string
 	debug          bool
 	read_search    map[string]string
@@ -107,6 +108,7 @@ func NewAPIObject(i_client *api_client, opts *apiObjectOpts) (*api_object, error
 		update_method:  opts.update_method,
 		destroy_method: opts.destroy_method,
 		delete_path:    opts.delete_path,
+		delete_data: 	opts.delete_data,
 		search_path:    opts.search_path,
 		debug:          opts.debug,
 		read_search:    opts.read_search,

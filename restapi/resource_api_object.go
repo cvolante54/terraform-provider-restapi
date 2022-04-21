@@ -333,6 +333,9 @@ func buildApiObjectOpts(d *schema.ResourceData) (*apiObjectOpts, error) {
 	if v, ok := d.GetOk("destroy_path"); ok {
 		opts.delete_path = v.(string)
 	}
+	if v, ok := d.GetOk("destroy_data"); ok {
+		opts.delete_data = v.(bool)
+	}
 
 	read_search := expandReadSearch(d.Get("read_search").(map[string]interface{}))
 	opts.read_search = read_search
